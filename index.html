@@ -1415,7 +1415,7 @@ input:checked + .slider::before {
       el.innerHTML = `
         <img src="${image}" alt="${title}" loading="lazy">
         <div class="update-info">
-          <div class="update-title">
+          <div class="update-title notranslate" translate="no">
             <a href="${url}" target="_blank">${title}</a>
           </div>
           <div class="update-meta">${label} · ${pct}%</div>
@@ -1461,7 +1461,8 @@ input:checked + .slider::before {
       img.onclick = () => window.open(fav.url, "_blank");
 
       const title = document.createElement("div");
-      title.className = "item-title";
+      title.className = "item-title notranslate";
+      title.setAttribute("translate", "no");
       title.textContent = fav.title;
       title.onclick = () => window.open(fav.url, "_blank");
 
